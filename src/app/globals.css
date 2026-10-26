@@ -1,26 +1,164 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-espresso: #2c1208;
+  --color-cocoa: #4a1c0b;
+  --color-maroon: #6b2a12;
+  --color-rust: #8c3a17;
+  --color-copper: #b3541a;
+  --color-amber: #eea13a;
+  --color-honey: #f7c46a;
+  --color-ivory: #fffaf5;
+  --color-cream: #fcf3ea;
+  --color-sand: #f2dfcd;
+  --color-ink: #2c1408;
+  --color-muted: #6b5045;
+  --color-mist: #ecd9cb;
+  --color-whatsapp: #25d366;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-serif: var(--font-baskerville), "Libre Baskerville", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --spacing-18: 4.5rem;
+
+  --shadow-card: 0 1px 2px rgb(44 20 8 / 0.04), 0 14px 34px -14px rgb(44 20 8 / 0.2);
+  --shadow-glow: 0 0 0 1px rgb(238 161 58 / 0.35), 0 20px 50px -20px rgb(179 84 26 / 0.45);
+
+  --animate-twinkle: twinkle 4s ease-in-out infinite;
+  --animate-spin-slow: spin 120s linear infinite;
+  --animate-spin-slower: spin 200s linear infinite reverse;
+  --animate-float: float 7s ease-in-out infinite;
+  --animate-rise: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.25; }
+    50% { opacity: 1; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--color-ivory);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-variant-numeric: lining-nums;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--color-honey);
+    color: var(--color-espresso);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-copper);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+/* Fluid layout: content width and gutters scale with the screen. */
+@utility container-page {
+  width: 100%;
+  max-width: 90rem;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 3.5rem);
+}
+
+@utility section-y {
+  padding-block: clamp(4rem, 3rem + 5vw, 7.5rem);
+}
+
+/* Fluid heading scales */
+@utility text-display {
+  font-size: clamp(2.3rem, min(1.2rem + 3.6vw, 8svh), 4.75rem);
+  line-height: 1.08;
+}
+
+@utility text-heading {
+  font-size: clamp(1.85rem, 1.25rem + 1.9vw, 3.1rem);
+  line-height: 1.15;
+}
+
+@utility text-accent-gradient {
+  background: linear-gradient(100deg, #d8782a 0%, #b3541a 55%, #e3922f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-honey-gradient {
+  background: linear-gradient(100deg, #fbe0a6 0%, #eea13a 50%, #f7c46a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-earth {
+  background-color: var(--color-cocoa);
+  background-image:
+    radial-gradient(55rem 35rem at 90% -10%, rgb(179 84 26 / 0.45), transparent 60%),
+    radial-gradient(40rem 30rem at 0% 110%, rgb(238 161 58 / 0.16), transparent 60%),
+    linear-gradient(180deg, #4a1c0b 0%, #2c1208 100%);
+}
+
+@utility bg-hero {
+  background-color: var(--color-ivory);
+  background-image:
+    radial-gradient(48rem 34rem at 82% 40%, rgb(247 196 106 / 0.35), transparent 65%),
+    radial-gradient(36rem 28rem at 0% 0%, rgb(242 223 205 / 0.9), transparent 70%),
+    linear-gradient(180deg, #fffaf5 0%, #fcf3ea 100%);
+}
+
+@utility bg-paper {
+  background-color: var(--color-ivory);
+  background-image: radial-gradient(rgb(179 84 26 / 0.08) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@utility bg-amber-gradient {
+  background-image: linear-gradient(100deg, #f7c46a 0%, #eea13a 55%, #e3862a 100%);
+}
+
+/* Scroll-driven reveal: progressive enhancement, no JS, respects reduced motion. */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: rise linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
