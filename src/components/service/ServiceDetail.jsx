@@ -157,7 +157,7 @@ export default function ServiceDetail({ service, otherServices, detail, process,
         <section aria-labelledby="other-services-title" className="section-y bg-cream">
           <div className="container-page">
             <SectionHeading id="other-services-title" eyebrow={detail.otherEyebrow} title={detail.otherTitle} />
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {others.map((item) => (
                 <ServiceCard key={item.id} service={item} />
               ))}

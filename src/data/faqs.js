@@ -16,19 +16,19 @@ export const faqs = [
     id: "faq-details",
     question: "What details do I need to share?",
     answer:
-      "Your date, exact time and place of birth. If you don't know your exact birth time, mention it. Devansh can work with birth time rectification or Prashna (horary) methods.",
+      "Your date, exact time and place of birth. If you don't know your exact birth time, mention it. Birth time rectification or Prashna (horary) methods can be used instead.",
   },
   {
     id: "faq-online",
     question: "Are online consultations as effective as in-person ones?",
     answer:
-      "Yes. Your chart is prepared in advance either way, and video sessions offer the same depth of conversation. Many clients across 40+ countries consult online.",
+      "Yes. Your chart is prepared in advance either way, and video sessions offer the same depth of conversation. Many clients choose to consult online from wherever they are.",
   },
   {
     id: "faq-duration",
     question: "How long is a session, and what happens afterwards?",
     answer:
-      "Sessions run 40 to 90 minutes depending on the service. Afterwards you receive a written summary with key dates, observations and any suggested remedies.",
+      "Sessions run 30 to 90 minutes depending on the service. Afterwards you receive a written summary with key dates, observations and any suggested remedies.",
   },
   {
     id: "faq-remedies",

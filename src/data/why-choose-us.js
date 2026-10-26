@@ -32,11 +32,12 @@ export const whyChooseUs = {
       description: "Every session ends with a written summary and clear dates to act on.",
     },
   ],
-  credentialsTitle: "Credentials",
+  credentialsTitle: "Areas of practice",
   credentials: [
-    "Jyotish Acharya: Bharatiya Vidya Sansthan, Varanasi",
-    "Certified Vedic Numerologist",
-    "Member, Indian Council of Astrological Sciences",
-    "Visiting faculty, Vedic astrology programmes",
+    "Astrology, kundali analysis & kundali matching",
+    "Numerology & name guidance",
+    "Vastu for homes and workplaces",
+    "Spiritual healing & energy balancing",
+    "Rudraksha, gemstone & yantra guidance",
   ],
 };

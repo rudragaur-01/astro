@@ -8,9 +8,9 @@ import ServiceCard, { ServiceMeta } from "./ServiceCard";
 
 function FeaturedServiceCard({ service, ctaLabel, detailsLabel, bookHref }) {
   return (
-    <article className="reveal group relative isolate flex min-h-[32rem] flex-col justify-end overflow-hidden rounded-[2rem] p-8 text-ivory shadow-card md:col-span-2 lg:col-span-1 lg:row-span-2 lg:min-h-0 lg:p-10">
-      <CmsImage image={service.image} sizes="(min-width: 1024px) 34vw, 100vw" className="-z-10 transition-transform duration-700 group-hover:scale-105" />
-      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-espresso via-espresso/70 to-espresso/10" />
+    <article className="reveal group relative isolate flex min-h-[32rem] flex-col justify-end overflow-hidden rounded-[2rem] p-8 text-ivory shadow-card md:col-span-2 lg:col-span-3 lg:min-h-[26rem] lg:p-12">
+      <CmsImage image={service.image} sizes="(min-width: 1280px) 1300px, 100vw" className="-z-10 object-[center_40%] transition-transform duration-700 group-hover:scale-105" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-t from-espresso via-espresso/70 to-espresso/10 lg:bg-gradient-to-r lg:from-espresso/95 lg:via-espresso/70 lg:to-transparent" />
 
       {service.tag && (
         <span className="absolute top-6 left-6 rounded-full border border-amber/40 bg-espresso/60 px-4 py-1.5 text-xs font-semibold tracking-wide text-honey backdrop-blur">
@@ -26,7 +26,7 @@ function FeaturedServiceCard({ service, ctaLabel, detailsLabel, bookHref }) {
           {service.title}
         </CmsLink>
       </h3>
-      <p className="mt-3 max-w-md leading-relaxed text-ivory/80">{service.summary}</p>
+      <p className="mt-3 max-w-xl leading-relaxed text-ivory/80">{service.summary}</p>
       <div className="mt-6">
         <ServiceMeta service={service} dark />
       </div>

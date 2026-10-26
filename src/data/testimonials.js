@@ -13,10 +13,10 @@ export const testimonials = [
   {
     id: "testimonial-1",
     quote:
-      "I came in anxious about a job offer abroad. The reading was calm and specific. He pointed to a window three months later, and that's exactly when the right role appeared.",
+      "I came in anxious about a job offer abroad. The reading was calm and specific. Dr Vashistha pointed to a window three months later, and that's exactly when the right role appeared.",
     name: "Sample Client A.",
     location: "Bengaluru",
-    service: "Career Astrology",
+    service: "Kundali Analysis",
     rating: 5,
   },
   {
@@ -25,7 +25,7 @@ export const testimonials = [
       "What I valued most was the honesty. No scary predictions, no list of expensive remedies, just clear advice for both our families before the wedding.",
     name: "Sample Client R.",
     location: "Pune",
-    service: "Marriage Compatibility",
+    service: "Kundali Matching",
     rating: 5,
   },
   {
@@ -34,7 +34,7 @@ export const testimonials = [
       "The written summary after my session has become a reference I return to every few months. It's thoughtful, practical and surprisingly reassuring.",
     name: "Sample Client M.",
     location: "London",
-    service: "Kundli Analysis",
+    service: "Vastu Consultation",
     rating: 5,
   },
 ];

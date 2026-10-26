@@ -1,14 +1,14 @@
 import { media } from "./media";
 
 export const servicesSection = {
-  eyebrow: "Consultations",
-  title: "Guidance for every crossroad",
+  eyebrow: "Professional Services",
+  title: "Guidance for every part of life",
   description:
-    "Every session begins with a careful study of your birth chart. Choose the focus that matters most to you right now.",
+    "From your birth chart to the energy of your home, each consultation is personal, unhurried and grounded in Vedic wisdom.",
   cardCtaLabel: "Book this session",
   detailsLabel: "View details",
   priceLabel: "From",
-  footnote: "All sessions are available online via video call or in person at the New Delhi studio.",
+  footnote: "All consultations are available online via video call or in person.",
 };
 
 // Labels and shared content for the service detail page.
@@ -35,16 +35,16 @@ export const serviceDetail = {
   processTitle: "From booking to guidance",
   faqTitle: "Questions about this session",
   otherEyebrow: "Explore More",
-  otherTitle: "Other consultations",
+  otherTitle: "Other services",
 };
 
 // Service pages live at /services/{slug}; the content layer builds each `href`.
 export const services = [
   {
-    id: "kundli-analysis",
-    slug: "kundli-analysis",
+    id: "kundali-analysis",
+    slug: "kundali-analysis",
     icon: "scroll-text",
-    title: "Kundli Analysis",
+    title: "Astrology & Kundali Analysis",
     summary:
       "A complete reading of your birth chart: planetary strengths, current Dasha, life themes and the windows of opportunity ahead.",
     image: media.kundliClock,
@@ -53,35 +53,35 @@ export const services = [
     featured: true,
     tag: "Most requested",
     description: [
-      "Your kundli is a snapshot of the sky at the moment you were born. In this session Acharya Devansh walks you through it house by house, explaining what each planet's placement means for your nature, relationships, career and wellbeing.",
-      "We then focus on timing: the Mahadasha and Antardasha you are in now, the transits shaping the next twelve months, and the periods best suited to important decisions.",
+      "Your kundali is a snapshot of the sky at the moment you were born. In this session Dr Shalini Vashistha walks you through it house by house, explaining what each planet's placement means for your nature, relationships, career, finances and wellbeing.",
+      "The reading then turns to timing: the Mahadasha and Antardasha you are in now, the transits shaping the months ahead, and the periods best suited to important decisions.",
     ],
     includes: [
       "Ascendant, Moon sign and Nakshatra in depth",
       "Planetary strengths, yogas and doshas",
+      "Career, relationships, health and finances",
       "Current Mahadasha and Antardasha",
-      "12-month transit outlook",
       "Simple, practical remedies where relevant",
     ],
     idealFor: [
-      "You want a complete overview of your chart for the first time",
-      "You're entering a new life phase and want to understand its themes",
-      "You have several questions across different areas of life",
+      "You want a complete overview of your chart",
+      "You're entering a new phase of life and want clarity",
+      "You have questions across several areas of life",
     ],
     deliverables: [
       "A recorded video session (for online consultations)",
-      "Written summary with key dates within 48 hours",
-      "One follow-up question by email within 30 days",
+      "Written summary with key dates",
+      "One follow-up question by email",
     ],
     faqs: [
       {
-        id: "kundli-faq-1",
+        id: "kundali-faq-1",
         question: "What if I don't know my exact birth time?",
         answer:
-          "Share your best estimate. Devansh can perform birth time rectification using key life events, or use Prashna (horary) techniques for specific questions.",
+          "Share your best estimate. Birth time rectification using key life events, or Prashna (horary) techniques for specific questions, can be used instead.",
       },
       {
-        id: "kundli-faq-2",
+        id: "kundali-faq-2",
         question: "Do I need to prepare questions?",
         answer:
           "It helps but isn't required. Most clients note two or three areas of focus; the rest of the session covers your chart as a whole.",
@@ -89,67 +89,23 @@ export const services = [
     ],
   },
   {
-    id: "career-astrology",
-    slug: "career-astrology",
-    icon: "briefcase",
-    title: "Career Astrology",
-    summary: "Timing for job changes, business launches and promotions, read through your 10th house and transits.",
-    image: media.careerDesk,
-    price: 2100,
-    duration: "45 min",
-    description: [
-      "Career questions are rarely just about 'what' but about 'when'. This session reads your 10th house, its lord, and the planets influencing your profession to understand where your natural strengths lie.",
-      "We then map the upcoming Dasha and transit periods so you can plan job changes, business launches, investments or further study with greater confidence.",
-    ],
-    includes: [
-      "10th house, its lord and career significators",
-      "Suitable fields and working styles for your chart",
-      "Favourable periods for change, growth and launches",
-      "Business vs. employment indications",
-      "Remedies for obstacles and delays",
-    ],
-    idealFor: [
-      "You're considering a job change or a career switch",
-      "You're planning to start or expand a business",
-      "You feel stuck despite consistent effort",
-    ],
-    deliverables: [
-      "Written summary with favourable date windows",
-      "Recorded session for online consultations",
-      "Follow-up question by email within 30 days",
-    ],
-    faqs: [
-      {
-        id: "career-faq-1",
-        question: "Can you suggest a specific company or role?",
-        answer:
-          "Astrology indicates fields, environments and timing rather than specific employers. Devansh helps you weigh real options you are considering against your chart.",
-      },
-      {
-        id: "career-faq-2",
-        question: "Is this suitable for business owners?",
-        answer: "Yes. Many clients use this session to time launches, partnerships and expansion decisions.",
-      },
-    ],
-  },
-  {
-    id: "marriage-compatibility",
-    slug: "marriage-compatibility",
+    id: "kundali-matching",
+    slug: "kundali-matching",
     icon: "heart-handshake",
-    title: "Marriage Compatibility",
+    title: "Kundali Matching",
     summary: "Detailed Guna Milan, Manglik assessment and an honest look at long-term harmony between two charts.",
     image: media.bridalHands,
     price: 2500,
     duration: "60 min",
     description: [
-      "Kundli matching goes far beyond a score out of 36. Devansh studies both charts individually, then together, looking at emotional compatibility, family life, health and long-term stability.",
-      "He is known for honest, balanced guidance. Where challenges appear, he explains what they really mean and how couples can work with them, without fear or exaggeration.",
+      "Kundali matching goes far beyond a score out of 36. Both charts are studied individually and then together, looking at emotional compatibility, family life, health and long-term stability.",
+      "Where challenges appear, Dr Shalini Vashistha explains what they really mean and how couples can work with them, with balanced guidance and without fear or exaggeration.",
     ],
     includes: [
       "Ashtakoota Guna Milan with explanation",
       "Manglik (Kuja) dosha assessment for both charts",
       "7th house and Navamsa (D9) comparison",
-      "Auspicious marriage timing (Muhurta) guidance",
+      "Auspicious marriage timing (Muhurta)",
       "Remedies where genuinely required",
     ],
     idealFor: [
@@ -160,20 +116,20 @@ export const services = [
     deliverables: [
       "Compatibility summary for both families",
       "Suggested Muhurta windows if requested",
-      "Follow-up question by email within 30 days",
+      "One follow-up question by email",
     ],
     faqs: [
       {
-        id: "marriage-faq-1",
+        id: "matching-faq-1",
         question: "Do both partners need to attend?",
         answer:
-          "It's not required, but we recommend it. We need accurate birth details for both partners either way.",
+          "It's not required, but it's recommended. Accurate birth details for both partners are needed either way.",
       },
       {
-        id: "marriage-faq-2",
+        id: "matching-faq-2",
         question: "What if the Guna score is low?",
         answer:
-          "A low score alone doesn't decide a match. Devansh looks at the full charts and explains whether the concerns are significant or easily balanced.",
+          "A low score alone doesn't decide a match. The full charts are studied to see whether the concerns are significant or easily balanced.",
       },
     ],
   },
@@ -181,7 +137,7 @@ export const services = [
     id: "numerology",
     slug: "numerology",
     icon: "hash",
-    title: "Numerology",
+    title: "Numerology Consultation",
     summary: "Your life path, destiny and name numbers decoded, with guidance on names, dates and lucky cycles.",
     image: media.constellationGlobe,
     price: 1500,
@@ -205,7 +161,7 @@ export const services = [
     deliverables: [
       "Personal numerology chart (PDF)",
       "Name suggestions where requested",
-      "Follow-up question by email within 30 days",
+      "One follow-up question by email",
     ],
     faqs: [
       {
@@ -216,50 +172,183 @@ export const services = [
       {
         id: "num-faq-2",
         question: "Can you suggest names for a new business?",
-        answer: "Yes. Share a shortlist and Devansh will analyse each option and suggest refinements.",
+        answer: "Yes. Share a shortlist and each option will be analysed, with refinements suggested.",
       },
     ],
   },
   {
-    id: "personal-consultation",
-    slug: "personal-consultation",
-    icon: "messages-square",
-    title: "Personal Consultation",
-    summary: "An open one-to-one session for any question, from health and family to relocation and timing.",
-    image: media.meditationDawn,
+    id: "vastu-consultation",
+    slug: "vastu-consultation",
+    icon: "compass",
+    title: "Vastu Consultation",
+    summary: "Bring balance to your home or workplace with Vastu Shastra guidance on layout, directions and energy flow.",
+    image: media.vastuHome,
     price: 5100,
     duration: "90 min",
     description: [
-      "Our most in-depth session, with no fixed agenda. Bring any question, whether it's family, health, relocation, property, education or a decision you keep returning to.",
-      "With ninety minutes, there is time to go deep into your chart, explore several areas and leave with a clear, personalised plan.",
+      "Vastu Shastra is the ancient science of harmonising spaces with the five elements and the eight directions. A well-balanced space supports health, relationships and prosperity for everyone who lives or works in it.",
+      "Share your floor plan and photos, and receive a direction-by-direction review with practical corrections, most of which need no demolition or major changes.",
     ],
     includes: [
-      "Full birth chart review",
-      "Any combination of life areas you choose",
-      "Prashna (horary) for specific questions",
-      "Muhurta for upcoming events",
-      "A personalised remedy plan",
+      "Floor plan review by direction and zone",
+      "Entrance, kitchen, bedroom and puja room placement",
+      "Five-element balance and energy flow",
+      "Simple corrections without demolition",
+      "Guidance for new homes, offices and shops",
     ],
     idealFor: [
-      "You're facing a significant life decision",
-      "You have questions across several areas",
-      "You'd like an unhurried, in-depth conversation",
+      "You're buying, building or renovating a property",
+      "You're moving into a new home or office",
+      "Your space feels heavy, stuck or unsettled",
     ],
     deliverables: [
-      "Detailed written summary and remedy plan",
-      "Recorded session for online consultations",
-      "Two follow-up questions by email within 60 days",
+      "Marked-up floor plan with recommendations",
+      "Prioritised list of corrections and remedies",
+      "One follow-up question by email",
     ],
     faqs: [
       {
-        id: "personal-faq-1",
-        question: "Can family members join the session?",
-        answer: "Yes, up to two family members can join, and we can look at their charts briefly if details are shared in advance.",
+        id: "vastu-faq-1",
+        question: "Do you need to visit the property?",
+        answer:
+          "Not always. Many consultations are done online using a floor plan, compass directions and photos. Site visits can be arranged where needed.",
       },
       {
-        id: "personal-faq-2",
-        question: "Is this available in person?",
-        answer: "Yes, at the New Delhi studio, or online via video call from anywhere in the world.",
+        id: "vastu-faq-2",
+        question: "Will I need to break walls or rebuild?",
+        answer:
+          "Rarely. Most imbalances can be corrected with placement changes, colours, elements or yantras, without structural work.",
+      },
+    ],
+  },
+  {
+    id: "spiritual-healing",
+    slug: "spiritual-healing",
+    icon: "sparkles",
+    title: "Spiritual Healing",
+    summary: "Gentle healing sessions to release stress, restore energetic balance and reconnect with inner calm.",
+    image: media.meditationDawn,
+    price: 2100,
+    duration: "60 min",
+    description: [
+      "Life's pressures can leave us drained, anxious or disconnected. Spiritual healing works on the subtle energy body to release blockages and restore a sense of balance and peace.",
+      "Each session is tailored to what you're carrying at the moment, combining energy work, guided breathing and mantra, with simple practices you can continue at home.",
+    ],
+    includes: [
+      "Energy assessment and chakra balancing",
+      "Guided meditation and breathwork",
+      "Mantra and affirmation practice",
+      "Release of emotional and energetic blockages",
+      "Daily practices to maintain balance",
+    ],
+    idealFor: [
+      "You feel stressed, drained or emotionally heavy",
+      "You're going through a difficult transition",
+      "You want to deepen your spiritual practice",
+    ],
+    deliverables: [
+      "A personalised healing session",
+      "Simple daily practices to continue at home",
+      "One follow-up question by email",
+    ],
+    faqs: [
+      {
+        id: "healing-faq-1",
+        question: "Does spiritual healing work online?",
+        answer: "Yes. Energy healing is not limited by distance, and online sessions are as effective as in-person ones.",
+      },
+      {
+        id: "healing-faq-2",
+        question: "Is it a replacement for medical treatment?",
+        answer:
+          "No. Spiritual healing supports emotional and energetic wellbeing and works alongside, never instead of, medical care.",
+      },
+    ],
+  },
+  {
+    id: "rudraksha-gemstone-consultation",
+    slug: "rudraksha-gemstone-consultation",
+    icon: "gem",
+    title: "Rudraksha & Gemstone Consultation",
+    summary: "Find the right rudraksha and gemstones for your chart, with guidance on wearing and energising them.",
+    image: media.gemstoneRuby,
+    price: 1800,
+    duration: "45 min",
+    description: [
+      "The right gemstone or rudraksha can strengthen supportive planets in your chart, while the wrong one can do more harm than good. This consultation studies your chart to recommend what truly suits you.",
+      "You'll learn which stone or mukhi to wear, its weight, metal and finger, and the right day and mantra to begin, so your remedy works as intended.",
+    ],
+    includes: [
+      "Chart-based gemstone recommendation",
+      "Rudraksha mukhi selection",
+      "Weight, metal and finger guidance",
+      "Auspicious day and mantra for wearing",
+      "Checks on stones you already own",
+    ],
+    idealFor: [
+      "You're considering wearing a gemstone or rudraksha",
+      "You've been advised a stone and want a second opinion",
+      "You want an authentic, energised remedy",
+    ],
+    deliverables: [
+      "Written recommendation with wearing instructions",
+      "Access to certified stones from our store",
+      "One follow-up question by email",
+    ],
+    faqs: [
+      {
+        id: "gem-faq-1",
+        question: "Do I have to buy the gemstone from you?",
+        answer:
+          "No. You're welcome to buy elsewhere. Certified, energised options are available in the Divine Trinetra store if you'd prefer.",
+      },
+      {
+        id: "gem-faq-2",
+        question: "Can I wear more than one gemstone?",
+        answer: "Sometimes. Certain combinations work well while others conflict, so your chart is checked before combining stones.",
+      },
+    ],
+  },
+  {
+    id: "yantras-spiritual-products",
+    slug: "yantras-spiritual-products",
+    icon: "orbit",
+    title: "Yantras & Spiritual Products",
+    summary: "Personal guidance on choosing, placing and energising yantras and sacred products for your home and goals.",
+    image: media.shreeYantra,
+    price: 1100,
+    duration: "30 min",
+    description: [
+      "Yantras are sacred geometric tools that focus divine energy for specific purposes: prosperity, protection, health or harmony. Choosing the right one, and placing it correctly, makes all the difference.",
+      "This session matches yantras and spiritual products to your chart and intentions, with clear instructions on placement, energising and daily worship.",
+    ],
+    includes: [
+      "Yantra selection based on your chart and goals",
+      "Correct direction and placement at home or work",
+      "Energising (pran pratishtha) guidance",
+      "Daily mantra and worship routine",
+      "Recommendations for malas, kalash and puja items",
+    ],
+    idealFor: [
+      "You want to bring a yantra into your home or office",
+      "You're unsure which spiritual products suit you",
+      "You'd like a simple daily spiritual routine",
+    ],
+    deliverables: [
+      "Personal yantra and product recommendations",
+      "Placement and energising instructions",
+      "Energised products from the Divine Trinetra store",
+    ],
+    faqs: [
+      {
+        id: "yantra-faq-1",
+        question: "Are the yantras in your store energised?",
+        answer: "Yes. Every yantra is energised with the appropriate mantras before it is dispatched.",
+      },
+      {
+        id: "yantra-faq-2",
+        question: "Can I keep more than one yantra?",
+        answer: "Yes, as long as they're placed correctly. Placement guidance is part of the consultation.",
       },
     ],
   },

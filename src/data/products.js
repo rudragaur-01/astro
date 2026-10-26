@@ -4,7 +4,7 @@ export const productsSection = {
   eyebrow: "The Sacred Store",
   title: "Authentic, energised & thoughtfully sourced",
   description:
-    "A curated collection of gemstones, rudraksha, yantras and ritual essentials, each selected and energised under Acharya Devansh's guidance.",
+    "A curated collection of gemstones, rudraksha, yantras and ritual essentials, each selected and energised under Dr Shalini Vashistha's guidance.",
   allCategoriesLabel: "All",
   filterLabel: "Filter products by category",
   resultsLabel: "{count} products shown",
@@ -189,11 +189,11 @@ export const products = [
     image: media.zodiacArtwork,
     badge: "Digital",
     longDescription: [
-      "A detailed written study of your birth chart, prepared by our team and reviewed personally by Acharya Devansh. It covers your planetary placements, strengths, current and upcoming Dasha periods, and a month-by-month look at the year ahead.",
+      "A detailed written study of your birth chart, prepared by our team and reviewed personally by Dr Shalini Vashistha. It covers your planetary placements, strengths, current and upcoming Dasha periods, and a month-by-month look at the year ahead.",
       "Written in plain language, it's a reference you can return to whenever you face a decision.",
     ],
     highlights: [
-      "40+ pages, hand-reviewed by Acharya Devansh",
+      "40+ pages, hand-reviewed by Dr Shalini Vashistha",
       "Planetary strengths, houses and yogas explained",
       "Current Dasha and 12-month transit outlook",
       "Delivered as a beautifully designed PDF",

@@ -3,19 +3,19 @@
 
 export const site = {
   brand: {
-    name: "Devansh Rao",
-    tagline: "Vedic Astrology",
-    monogram: "DR",
+    name: "Divine Trinetra",
+    tagline: "Dr Shalini Vashistha",
+    monogram: "DT",
     homeHref: "/",
   },
 
   seo: {
     // Replace with the production domain; used to build absolute social-image URLs.
-    siteUrl: "https://devanshrao.example",
-    title: "Acharya Devansh Rao | Vedic Astrologer & Spiritual Store",
+    siteUrl: "https://divinetrinetra.example",
+    title: "Divine Trinetra | Dr Shalini Vashistha: Astrology, Vastu & Spiritual Healing",
     description:
-      "Personal Vedic astrology consultations: kundli analysis, career, marriage compatibility and numerology. Online and in person, with a curated store of energised spiritual products.",
-    keywords: ["vedic astrologer", "kundli analysis", "marriage compatibility", "numerology", "rudraksha", "gemstones"],
+      "Kundali analysis and matching, numerology, Vastu, spiritual healing, and rudraksha and gemstone guidance with Dr Shalini Vashistha. Online and in person, with a curated store of energised spiritual products.",
+    keywords: ["Divine Trinetra", "Dr Shalini Vashistha", "vedic astrologer", "kundali analysis", "kundali matching", "numerology", "vastu consultation", "spiritual healing", "rudraksha", "gemstones", "yantras"],
   },
 
   locale: "en-IN",
@@ -46,7 +46,7 @@ export const site = {
 
   contact: {
     phone: { label: "+91 98765 43210", href: "tel:+919876543210" },
-    email: { label: "namaste@devanshrao.example", href: "mailto:namaste@devanshrao.example" },
+    email: { label: "namaste@divinetrinetra.example", href: "mailto:namaste@divinetrinetra.example" },
     whatsapp: {
       label: "Chat on WhatsApp",
       href: "https://wa.me/919876543210",
@@ -64,17 +64,19 @@ export const site = {
 
   footer: {
     blurb:
-      "Thoughtful Vedic guidance for life's important crossroads, with a curated collection of authentic spiritual products.",
+      "Vedic astrology, numerology, Vastu and spiritual healing with Dr Shalini Vashistha, alongside a curated collection of authentic spiritual products.",
     columns: [
       {
         id: "footer-services",
         title: "Consultations",
         links: [
-          { label: "Kundli Analysis", href: "/services/kundli-analysis" },
-          { label: "Career Astrology", href: "/services/career-astrology" },
-          { label: "Marriage Compatibility", href: "/services/marriage-compatibility" },
+          { label: "Kundali Analysis", href: "/services/kundali-analysis" },
+          { label: "Kundali Matching", href: "/services/kundali-matching" },
           { label: "Numerology", href: "/services/numerology" },
-          { label: "Personal Consultation", href: "/services/personal-consultation" },
+          { label: "Vastu Consultation", href: "/services/vastu-consultation" },
+          { label: "Spiritual Healing", href: "/services/spiritual-healing" },
+          { label: "Rudraksha & Gemstones", href: "/services/rudraksha-gemstone-consultation" },
+          { label: "Yantras & Products", href: "/services/yantras-spiritual-products" },
         ],
       },
       {
@@ -92,7 +94,7 @@ export const site = {
         id: "footer-company",
         title: "Explore",
         links: [
-          { label: "About Devansh", href: "/#about" },
+          { label: "About Dr Shalini", href: "/#about" },
           { label: "How It Works", href: "/#process" },
           { label: "Insights", href: "/#insights" },
           { label: "FAQs", href: "/#faq" },
@@ -114,7 +116,7 @@ export const site = {
       { label: "Refund Policy", href: "#" },
       { label: "Shipping Policy", href: "#" },
     ],
-    copyright: "© 2026 Devansh Rao Vedic Astrology. All rights reserved.",
+    copyright: "© 2026 Divine Trinetra. All rights reserved.",
     disclaimer:
       "Astrology offers guidance for reflection and is not a substitute for medical, legal or financial advice.",
   },

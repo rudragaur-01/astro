@@ -44,11 +44,17 @@ export const media = {
     width: 1600,
     height: 1067,
   },
-  careerDesk: {
-    src: "/images/site/career-desk.jpg",
-    alt: "Hands taking notes beside a laptop during a planning session",
+  vastuHome: {
+    src: "/images/site/vastu-home.jpg",
+    alt: "A calm, bright living space with plants and natural wood",
+    width: 1067,
+    height: 1600,
+  },
+  gemstoneRuby: {
+    src: "/images/site/gemstone-ruby.jpg",
+    alt: "Close-up of rough red ruby gemstones",
     width: 1600,
-    height: 1068,
+    height: 1600,
   },
   bridalHands: {
     src: "/images/site/bridal-hands.jpg",
