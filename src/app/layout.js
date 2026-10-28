@@ -4,6 +4,7 @@ import Footer from "@/components/layout/Footer";
 import Header from "@/components/layout/Header";
 import { getSiteSettings } from "@/lib/content";
 import "./globals.css";
+import logo from "./logo.png";
 
 const baskerville = Libre_Baskerville({
   variable: "--font-baskerville",
@@ -24,6 +25,7 @@ export async function generateMetadata() {
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
+    icons: { apple: logo.src },
     openGraph: {
       title: seo.title,
       description: seo.description,

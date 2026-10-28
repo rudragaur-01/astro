@@ -1,11 +1,13 @@
 // Global settings: branding, navigation, contact details and footer.
 // All values are sample content for the prototype.
 
+import { media } from "./media";
+
 export const site = {
   brand: {
     name: "Divine Trinetra",
     tagline: "Dr Shalini Vashistha",
-    monogram: "DT",
+    logo: media.logo,
     homeHref: "/",
   },
 
