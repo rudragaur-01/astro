@@ -10,7 +10,6 @@ export const about = {
   image: media.brassDiya,
   secondaryImage: media.persianHoroscope,
   portrait: media.portrait,
-  experienceBadge: { value: "1:1", label: "Personal guidance" },
   achievements: [
     { id: "ach-astrology", icon: "scroll-text", title: "Vedic Astrology", description: "Kundali analysis and kundali matching" },
     { id: "ach-vastu", icon: "compass", title: "Vastu Shastra", description: "Harmonious homes and workplaces" },
