@@ -3,6 +3,11 @@
 
 import { media } from "./media";
 
+// Business phone, used for the call link, WhatsApp chat and footer.
+// Change it here only; the links below are derived from it.
+const phone = "+91 92105 59516";
+const phoneDigits = phone.replace(/\D/g, "");
+
 export const site = {
   brand: {
     name: "Divine Trinetra",
@@ -47,11 +52,11 @@ export const site = {
   menuLabels: { open: "Open menu", close: "Close menu" },
 
   contact: {
-    phone: { label: "+91 98765 43210", href: "tel:+919876543210" },
+    phone: { label: phone, href: `tel:+${phoneDigits}` },
     email: { label: "namaste@divinetrinetra.example", href: "mailto:namaste@divinetrinetra.example" },
     whatsapp: {
       label: "Chat on WhatsApp",
-      href: "https://wa.me/919876543210",
+      href: `https://wa.me/${phoneDigits}`,
     },
     address: "Studio 4, Celestial Court, Hauz Khas Village, New Delhi 110016",
     hours: "Mon – Sat · 10:00 am – 7:00 pm IST",
