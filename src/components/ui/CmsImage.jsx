@@ -5,6 +5,10 @@ import ZodiacWheel from "./ZodiacWheel";
 // next/image wrapper for CMS media objects ({ src, alt, width, height }).
 // Fills its (relatively positioned) parent; renders a celestial placeholder
 // when the image is missing so optional media never breaks the layout.
+// Linked images from the content sheet can be on any host, so they bypass the
+// image optimizer instead of allowlisting every domain.
+export const isRemoteImage = (src) => /^https?:\/\//.test(src ?? "");
+
 export default function CmsImage({ image, sizes = "100vw", className = "", preload = false, fallbackLabel }) {
   if (!image?.src) {
     return (
@@ -27,6 +31,7 @@ export default function CmsImage({ image, sizes = "100vw", className = "", prelo
       fill
       sizes={sizes}
       preload={preload}
+      unoptimized={isRemoteImage(image.src)}
       className={`object-cover ${className}`}
     />
   );

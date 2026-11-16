@@ -4,6 +4,19 @@
 
 export const media = {
   // Brand & editorial
+  logo: {
+    src: "/images/brand/logo-emblem.png",
+    alt: "",
+    width: 256,
+    height: 256,
+  },
+  // Full logo with wordmark, for print and social use.
+  logoFull: {
+    src: "/images/brand/logo.jpg",
+    alt: "Divine Trinetra logo: a golden third eye on a lotus beneath a star",
+    width: 1244,
+    height: 943,
+  },
   zodiacArtwork: {
     src: "/images/Zodiac_horoscope_artwork.jpeg",
     alt: "Gold zodiac wheel with the twelve signs on a deep blue background",

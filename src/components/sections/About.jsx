@@ -18,14 +18,6 @@ export default function About({ about }) {
           <div className="absolute right-0 bottom-[-6%] aspect-square w-[46%] overflow-hidden rounded-[2rem] border-8 border-ivory shadow-card">
             <CmsImage image={about.secondaryImage} sizes="(min-width: 1024px) 22vw, 45vw" />
           </div>
-
-          <div className="absolute top-8 right-[6%] flex size-32 flex-col items-center justify-center rounded-full bg-maroon text-center shadow-[0_20px_50px_-15px_rgb(92_36_16/0.7)] ring-1 ring-amber/40 sm:size-36">
-            <span aria-hidden="true" className="absolute inset-2 rounded-full border border-dashed border-amber/40" />
-            <span className="text-honey-gradient font-serif text-4xl leading-none font-bold sm:text-5xl">{about.experienceBadge.value}</span>
-            <span className="mt-1 max-w-[6rem] text-[10px] leading-tight font-semibold tracking-[0.16em] text-ivory/80 uppercase">
-              {about.experienceBadge.label}
-            </span>
-          </div>
         </div>
 
         <div>
