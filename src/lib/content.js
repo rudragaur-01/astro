@@ -1,119 +1,105 @@
 // Content repository: the single place the UI reads content from.
 //
-// Today every getter resolves local data from `src/data`. When Strapi is
-// introduced, replace a getter's body with a fetch to the Strapi API and map
-// the response to the same shape. Components never import `src/data` directly,
-// so nothing in the UI needs to change.
-//
-//   export async function getServices() {
-//     "use cache";
-//     cacheLife("hours");
-//     const res = await fetch(`${process.env.STRAPI_URL}/api/services?populate=image`);
-//     return (await res.json()).data.map(toService);
-//   }
+// Content is defined in `src/data` and can be overridden from the Google Sheet
+// for the fields allowed in `src/lib/cms/schema.js`. The sheet can edit and
+// hide existing records and add services and products; it never adds sections
+// or other page types. Components never import `src/data` directly.
 
-import { cacheLife } from "next/cache";
-import { site } from "@/data/site";
-import { hero } from "@/data/hero";
-import { about } from "@/data/about";
-import { services, servicesSection, serviceDetail } from "@/data/services";
-import { whyChooseUs } from "@/data/why-choose-us";
-import { consultationProcess } from "@/data/process";
-import { products, productCategories, productsSection, productDetail } from "@/data/products";
-import { testimonials, testimonialsSection } from "@/data/testimonials";
-import { booking } from "@/data/booking";
-import { insights, insightsSection } from "@/data/insights";
-import { faqs, faqsSection } from "@/data/faqs";
-import { finalCta } from "@/data/cta";
+import { getContent } from "@/lib/cms/load";
 
 // Routes are an app concern, so URLs are derived here from each item's slug.
 const withProductHref = (product) => ({ ...product, href: `/store/${product.slug}` });
 const withServiceHref = (service) => ({ ...service, href: `/services/${service.slug}` });
 
+const isVisible = (item) => item.visible !== false;
+const visibleServices = (content) =>
+  content.services.filter(isVisible).map((service) => ({ ...service, faqs: service.faqs?.filter(isVisible) }));
+const visibleProducts = (content) => content.products.filter(isVisible);
+
 export async function getSiteSettings() {
-  "use cache";
-  cacheLife("hours");
-  return site;
+  const content = await getContent();
+  const hiddenHrefs = new Set([
+    ...content.services.filter((item) => !isVisible(item)).map((item) => withServiceHref(item).href),
+    ...content.products.filter((item) => !isVisible(item)).map((item) => withProductHref(item).href),
+  ]);
+  const { site } = content;
+  return {
+    ...site,
+    footer: {
+      ...site.footer,
+      columns: site.footer.columns.map((column) => ({
+        ...column,
+        links: column.links.filter((link) => !hiddenHrefs.has(link.href)),
+      })),
+    },
+  };
 }
 
 export async function getHero() {
-  "use cache";
-  cacheLife("hours");
-  return hero;
+  return (await getContent()).hero;
 }
 
 export async function getAbout() {
-  "use cache";
-  cacheLife("hours");
-  return about;
+  return (await getContent()).about;
 }
 
 export async function getServices() {
-  "use cache";
-  cacheLife("hours");
-  return { ...servicesSection, bookHref: serviceDetail.bookHref, items: services.map(withServiceHref) };
+  const content = await getContent();
+  return {
+    ...content.servicesSection,
+    bookHref: content.serviceDetail.bookHref,
+    items: visibleServices(content).map(withServiceHref),
+  };
 }
 
 export async function getServiceSlugs() {
-  "use cache";
-  cacheLife("hours");
-  return services.map((service) => service.slug);
+  return (await getContent()).services.map((service) => service.slug);
 }
 
 export async function getService(slug) {
-  "use cache";
-  cacheLife("hours");
-  const service = services.find((item) => item.slug === slug);
+  const service = visibleServices(await getContent()).find((item) => item.slug === slug);
   return service ? withServiceHref(service) : null;
 }
 
 export async function getOtherServices(slug) {
-  "use cache";
-  cacheLife("hours");
-  return services.filter((item) => item.slug !== slug).map(withServiceHref);
+  return visibleServices(await getContent())
+    .filter((item) => item.slug !== slug)
+    .map(withServiceHref);
 }
 
 export async function getServiceDetailContent() {
-  "use cache";
-  cacheLife("hours");
-  return serviceDetail;
+  return (await getContent()).serviceDetail;
 }
 
 export async function getWhyChooseUs() {
-  "use cache";
-  cacheLife("hours");
-  return whyChooseUs;
+  return (await getContent()).whyChooseUs;
 }
 
 export async function getConsultationProcess() {
-  "use cache";
-  cacheLife("hours");
-  return consultationProcess;
+  return (await getContent()).consultationProcess;
 }
 
 export async function getProducts() {
-  "use cache";
-  cacheLife("hours");
-  return { ...productsSection, categories: productCategories, items: products.map(withProductHref) };
+  const content = await getContent();
+  return {
+    ...content.productsSection,
+    categories: content.productCategories,
+    items: visibleProducts(content).map(withProductHref),
+  };
 }
 
 export async function getProductSlugs() {
-  "use cache";
-  cacheLife("hours");
-  return products.map((product) => product.slug);
+  return (await getContent()).products.map((product) => product.slug);
 }
 
 export async function getProduct(slug) {
-  "use cache";
-  cacheLife("hours");
-  const product = products.find((item) => item.slug === slug);
+  const product = visibleProducts(await getContent()).find((item) => item.slug === slug);
   return product ? withProductHref(product) : null;
 }
 
 // Same-category items first, then the rest of the catalogue.
 export async function getRelatedProducts(slug, count) {
-  "use cache";
-  cacheLife("hours");
+  const products = visibleProducts(await getContent());
   const current = products.find((item) => item.slug === slug);
   const others = products.filter((item) => item.slug !== slug);
   const sameCategory = others.filter((item) => item.category === current?.category);
@@ -122,40 +108,38 @@ export async function getRelatedProducts(slug, count) {
 }
 
 export async function getProductDetailContent() {
-  "use cache";
-  cacheLife("hours");
-  return { ...productDetail, categories: productCategories, compareAtLabel: productsSection.compareAtLabel, viewProductLabel: productsSection.viewProductLabel };
+  const content = await getContent();
+  return {
+    ...content.productDetail,
+    categories: content.productCategories,
+    compareAtLabel: content.productsSection.compareAtLabel,
+    viewProductLabel: content.productsSection.viewProductLabel,
+  };
 }
 
 export async function getTestimonials() {
-  "use cache";
-  cacheLife("hours");
-  return { ...testimonialsSection, items: testimonials };
+  const content = await getContent();
+  return { ...content.testimonialsSection, items: content.testimonials.filter(isVisible) };
 }
 
 export async function getBooking() {
-  "use cache";
-  cacheLife("hours");
+  const content = await getContent();
   return {
-    ...booking,
-    serviceOptions: services.map(({ slug, title }) => ({ value: slug, label: title })),
+    ...content.booking,
+    serviceOptions: visibleServices(content).map(({ slug, title }) => ({ value: slug, label: title })),
   };
 }
 
 export async function getInsights() {
-  "use cache";
-  cacheLife("hours");
-  return { ...insightsSection, items: insights };
+  const content = await getContent();
+  return { ...content.insightsSection, items: content.insights.filter(isVisible) };
 }
 
 export async function getFaqs() {
-  "use cache";
-  cacheLife("hours");
-  return { ...faqsSection, items: faqs };
+  const content = await getContent();
+  return { ...content.faqsSection, items: content.faqs.filter(isVisible) };
 }
 
 export async function getFinalCta() {
-  "use cache";
-  cacheLife("hours");
-  return finalCta;
+  return (await getContent()).finalCta;
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { isRemoteImage } from "@/components/ui/CmsImage";
 import CmsLink from "@/components/ui/CmsLink";
 
 const tones = {
@@ -11,7 +12,7 @@ export default function BrandMark({ brand, tone = "light" }) {
   return (
     <CmsLink href={brand.homeHref} className="group flex items-center gap-3" aria-label={`${brand.name}, ${brand.tagline}, home`}>
       <span className={`relative size-11 shrink-0 overflow-hidden rounded-full border transition-colors sm:size-12 ${t.ring}`}>
-        <Image src={brand.logo.src} alt={brand.logo.alt} fill sizes="48px" className="object-cover" />
+        <Image src={brand.logo.src} alt={brand.logo.alt} fill sizes="48px" unoptimized={isRemoteImage(brand.logo.src)} className="object-cover" />
       </span>
       <span className="flex flex-col leading-none">
         <span className={`font-serif text-lg font-bold sm:text-xl ${t.name}`}>{brand.name}</span>
